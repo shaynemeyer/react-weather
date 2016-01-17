@@ -8,3 +8,5 @@ To run:
 * npm install
 * npm start
 * open index.html in Chrome
+
+![Weather Control](https://github.com/shaynemeyer/react-weather/blob/master/weather-control.png)
