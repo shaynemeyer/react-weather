@@ -1,11 +1,12 @@
 var React = require('react');
 
 var iconStyle = {
- fontSize:18
+fontSize:24
 };
 
 var tdStyle = {
   verticalAlign: "middle",
+  textAlign: "center",
   borderTop: "0 solid white",
   borderBottom: "1px solid white"
 };
@@ -50,15 +51,17 @@ var parseIcon = function(iconText) {
   } else if (iconText == "50n") {
     icon += "wi-windy";
   }
-  return (icon);
+  return (icon + " text-center");
 };
 
 var FutureWeatherListItem = React.createClass({
     render: function(){
         return (
             <tr>
-              <td style={tdStyle}><h5>{this.props.date}</h5></td>
-              <td style={tdStyle}><i className={parseIcon(this.props.icon)} style={iconStyle}></i></td>
+              <td style={tdStyle} className="pull-left"><h5>{this.props.date}</h5></td>
+              <td style={tdStyle}>
+                <i className={parseIcon(this.props.icon)} style={iconStyle}></i>
+              </td>
               <td style={tdStyle}><h5 className="pull-right">{Math.round(this.props.temp)} °F</h5></td>
             </tr>
         );

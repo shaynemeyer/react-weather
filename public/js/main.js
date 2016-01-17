@@ -19480,11 +19480,12 @@ module.exports = FutureWeatherList;
 var React = require('react');
 
 var iconStyle = {
-  fontSize: 18
+  fontSize: 24
 };
 
 var tdStyle = {
   verticalAlign: "middle",
+  textAlign: "center",
   borderTop: "0 solid white",
   borderBottom: "1px solid white"
 };
@@ -19529,7 +19530,7 @@ var parseIcon = function (iconText) {
   } else if (iconText == "50n") {
     icon += "wi-windy";
   }
-  return icon;
+  return icon + " text-center";
 };
 
 var FutureWeatherListItem = React.createClass({
@@ -19541,7 +19542,7 @@ var FutureWeatherListItem = React.createClass({
       null,
       React.createElement(
         "td",
-        { style: tdStyle },
+        { style: tdStyle, className: "pull-left" },
         React.createElement(
           "h5",
           null,
